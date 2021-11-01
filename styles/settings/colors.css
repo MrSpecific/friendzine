@@ -8,7 +8,7 @@
   --rust-dark: rgb(119, 74, 36);
 
   --body-bg: var(--pure-white);
-  --body-color: var(--black);
+  --body-color: var(--dark-grey);
 
   --link-color: var(--rust);
   --link-color-hover: var(--rust-dark);
