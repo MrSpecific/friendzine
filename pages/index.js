@@ -15,8 +15,7 @@ export default function Home() {
       <Header />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Will Christenson</h1>
-        <a href="github.com">Test Link</a>
+        <h1 className={styles.title}>Friendzine</h1>
       </main>
 
       <Footer />
