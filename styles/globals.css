@@ -10,8 +10,6 @@ body {
   font-family: var(--font-family-primary);
   background-color: var(--body-bg);
   color: var(--body-color);
-
-
 }
 
 /* body::before {
@@ -53,6 +51,8 @@ h1,
 .h1,
 .mega {
   font-size: var(--font-size-h1);
+  font-weight: 700;
+  letter-spacing: -4px;
 }
 
 h2,
