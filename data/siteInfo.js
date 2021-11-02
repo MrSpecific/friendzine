@@ -1,7 +1,7 @@
 const siteInfo = {
-  title: 'Will Christenson',
-  url: 'https://dangercode.net',
-  description: 'Portfolio & Blog',
+  title: 'Friendzine',
+  url: 'https://friendzine.dangercode.net',
+  description: 'Feeding Friendzine',
   opengraphImage: '/opengraph.png',
 };
 
