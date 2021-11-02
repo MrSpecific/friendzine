@@ -4,21 +4,21 @@ import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
 import Header from '../../components/Header';
 
 export default function IssuePage(props) {
-  const { fields } = props;
+  const { data } = props;
   const router = useRouter();
   const id = router.query;
 
   return (
     <>
       <Header>Issue</Header>
-      <h2>{fields.title}</h2>
+      <h2>{data.title}</h2>
     </>
   );
 }
 
 const ISSUE_SLUGS_QUERY = gql`
-  query IssueSlugs() {
-    issue() {
+  {
+    allIssues {
       slug
     }
   }
@@ -27,11 +27,10 @@ const ISSUE_SLUGS_QUERY = gql`
 export async function getStaticPaths() {
   const data = await request({
     query: ISSUE_SLUGS_QUERY,
-    variables: { limit },
     preview: false,
   });
 
-  const paths = getPaths(allRecipes, 'recipeSlug');
+  const paths = getPaths(data.allIssues, 'issueSlug');
 
   return {
     paths,
@@ -41,11 +40,11 @@ export async function getStaticPaths() {
 
 const SINGLE_ISSUE_QUERY = gql`
   query Issue($slug: String) {
-    recipe(filter: { slug: { eq: $slug } }) {
+    allIssues(filter: { slug: { eq: $slug } }) {
       title
       date
-      # description
       slug
+      # description
       # cover {
       #   responsiveImage(imgixParams: { fit: crop, w: 1400, h: 800 }) {
       #     ...responsiveImageFragment
@@ -66,18 +65,17 @@ const SINGLE_ISSUE_QUERY = gql`
       # }
     }
   }
-
-  ${responsiveImageFragment}
 `;
+// # ${responsiveImageFragment}
 
 export async function getStaticProps({ params }) {
   const data = await request({
     query: SINGLE_ISSUE_QUERY,
-    variables: { slug: params.recipeSlug },
+    variables: { slug: params.issueSlug },
     preview: false,
   });
 
   return {
-    props: data.recipe,
+    props: { data },
   };
 }
