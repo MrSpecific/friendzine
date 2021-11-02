@@ -14,6 +14,18 @@ export function request({ query, variables, preview }) {
   return client.request(query, variables);
 }
 
+export const getPaths = (entries, identifier = 'slug') => {
+  const paths = entries.map((entry) => {
+    return {
+      params: {
+        [identifier]: entry.slug || entry.fields.slug,
+      },
+    };
+  });
+
+  return paths;
+};
+
 // See: https://www.datocms.com/blog/offer-responsive-progressive-lqip-images-in-2020
 export const responsiveImageFragment = gql`
   fragment responsiveImageFragment on ResponsiveImage {
