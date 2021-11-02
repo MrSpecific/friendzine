@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { gql, getPaths, responsiveImageFragment } from '@data/datocms';
+import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
 
 import Header from '../../components/Header';
 
