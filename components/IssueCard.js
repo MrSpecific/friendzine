@@ -14,7 +14,7 @@ const IssueCard = ({ title, cover, slug }) => {
       )}
       <h3>
         <Link href={`/issue/${slug}`}>
-          <a>{title}</a>
+          <a className={styles.articleLink}>{title}</a>
         </Link>
       </h3>
     </article>

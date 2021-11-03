@@ -1,3 +1,13 @@
 .articlePreview {
   position: relative;
 }
+
+.articleLink {
+  display: inline-block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}

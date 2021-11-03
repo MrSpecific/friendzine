@@ -35,7 +35,7 @@ const Nav = () => {
           <ol className={styles.primaryNav}>
             <li className={styles.navItem}>
               <Link href={`/`}>
-                <a>All Recipes</a>
+                <a>Home</a>
               </Link>
             </li>
           </ol>
