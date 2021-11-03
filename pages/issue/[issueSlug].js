@@ -1,20 +1,35 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
+import { Image } from 'react-datocms';
 
-import Header from '../../components/Header';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
+import styles from '@styles/pages/Issue.module.css';
 
-export default function IssuePage({ title, ...fields }) {
+export default function IssuePage({ title, cover, ...fields }) {
   const router = useRouter();
   const id = router.query;
 
   return (
-    <>
+    <article className={styles.container}>
+      <Head>
+        <title>Friendzine</title>
+      </Head>
+
       <Header>
         <h1>{title}</h1>
       </Header>
-      <h2>{title}</h2>
-      {JSON.stringify(fields)}
-    </>
+
+      <main className="container">
+        {cover && (
+          // eslint-disable-next-line jsx-a11y/alt-text
+          <Image data={cover.responsiveImage} className={styles.featuredCoverImage} />
+        )}
+      </main>
+
+      <Footer />
+    </article>
   );
 }
 
@@ -47,11 +62,11 @@ const SINGLE_ISSUE_QUERY = gql`
       date
       slug
       # description
-      # cover {
-      #   responsiveImage(imgixParams: { fit: crop, w: 1400, h: 800 }) {
-      #     ...responsiveImageFragment
-      #   }
-      # }
+      cover {
+        responsiveImage(imgixParams: { fit: crop, w: 1400, h: 700 }) {
+          ...responsiveImageFragment
+        }
+      }
       # author {
       #   name
       # }
@@ -67,8 +82,8 @@ const SINGLE_ISSUE_QUERY = gql`
       # }
     }
   }
+  ${responsiveImageFragment}
 `;
-// # ${responsiveImageFragment}
 
 export async function getStaticProps({ params }) {
   const data = await request({
