@@ -10,7 +10,7 @@ const IssueCard = ({ title, cover, slug }) => {
     <article className={styles.issueCard}>
       {cover && (
         // eslint-disable-next-line jsx-a11y/alt-text
-        <Image data={cover.responsiveImage} className={styles.featuredCoverImage} />
+        <Image data={cover.responsiveImage} className={styles.coverImage} />
       )}
       <h3>
         <Link href={`/issue/${slug}`}>

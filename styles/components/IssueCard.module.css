@@ -3,6 +3,11 @@
   margin-bottom: var(--gap);
 }
 
+.coverImage {
+  margin-bottom: var(--spacer-s);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
 .articleLink {
   display: inline-block;
 
