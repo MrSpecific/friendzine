@@ -15,7 +15,7 @@ export default function IssuePage({ title, cover, content, spotifyUrl, ...fields
   return (
     <article className={styles.container}>
       <Head>
-        <title>Friendzine</title>
+        <title>{title}</title>
       </Head>
 
       <Header>
