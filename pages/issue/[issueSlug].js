@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
-import { Image } from 'react-datocms';
+import { Image, StructuredText } from 'react-datocms';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import styles from '@styles/pages/Issue.module.css';
 
-export default function IssuePage({ title, cover, ...fields }) {
+export default function IssuePage({ title, cover, content, ...fields }) {
   const router = useRouter();
   const id = router.query;
 
@@ -26,6 +26,10 @@ export default function IssuePage({ title, cover, ...fields }) {
           // eslint-disable-next-line jsx-a11y/alt-text
           <Image data={cover.responsiveImage} className={styles.featuredCoverImage} />
         )}
+
+        <div className={styles.contentWrapper}>
+          <StructuredText data={content} />
+        </div>
       </main>
 
       <Footer />
@@ -61,11 +65,13 @@ const SINGLE_ISSUE_QUERY = gql`
       title
       date
       slug
-      # description
       cover {
         responsiveImage(imgixParams: { fit: crop, w: 1400, h: 700 }) {
           ...responsiveImageFragment
         }
+      }
+      content {
+        value
       }
       # author {
       #   name

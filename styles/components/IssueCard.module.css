@@ -1,5 +1,6 @@
-.articlePreview {
+.issueCard {
   position: relative;
+  margin-bottom: var(--gap);
 }
 
 .articleLink {

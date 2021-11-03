@@ -2,8 +2,6 @@
   font-family: "fivo-sans";
   src: url("/fonts/fivosans-regular-webfont.woff2") format("woff2"),
     url("/fonts/fivosans-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
@@ -11,7 +9,7 @@
   src: url("/fonts/fivosans-oblique-webfont.woff2") format("woff2"),
     url("/fonts/fivosans-oblique-webfont.woff") format("woff");
   font-weight: normal;
-  font-style: italic, oblique;
+  font-style: italic;
 }
 
 @font-face {

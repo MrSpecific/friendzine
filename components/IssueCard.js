@@ -7,7 +7,7 @@ import styles from '@styles/components/IssueCard.module.css';
 
 const IssueCard = ({ title, cover, slug }) => {
   return (
-    <article className={styles.articlePreview}>
+    <article className={styles.issueCard}>
       {cover && (
         // eslint-disable-next-line jsx-a11y/alt-text
         <Image data={cover.responsiveImage} className={styles.featuredCoverImage} />
