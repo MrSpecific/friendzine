@@ -15,4 +15,5 @@
 
   --link-color: var(--pink);
   --link-color-hover: var(--magenta);
+  --link-color-active: var(--light-pink);
 }
