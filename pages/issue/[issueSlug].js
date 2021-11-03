@@ -5,9 +5,10 @@ import { Image, StructuredText } from 'react-datocms';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import SpotifyPlayer from '@components/SpotifyPlayer';
 import styles from '@styles/pages/Issue.module.css';
 
-export default function IssuePage({ title, cover, content, ...fields }) {
+export default function IssuePage({ title, cover, content, spotifyUrl, ...fields }) {
   const router = useRouter();
   const id = router.query;
 
@@ -24,7 +25,13 @@ export default function IssuePage({ title, cover, content, ...fields }) {
       <main className="container">
         {cover && (
           // eslint-disable-next-line jsx-a11y/alt-text
-          <Image data={cover.responsiveImage} className={styles.featuredCoverImage} />
+          <Image data={cover.responsiveImage} className={styles.coverImage} />
+        )}
+
+        {spotifyUrl && (
+          <div className={styles.spotifyWrapper}>
+            <SpotifyPlayer url={spotifyUrl} />
+          </div>
         )}
 
         <div className={styles.contentWrapper}>
@@ -73,6 +80,7 @@ const SINGLE_ISSUE_QUERY = gql`
       content {
         value
       }
+      spotifyUrl
       # author {
       #   name
       # }

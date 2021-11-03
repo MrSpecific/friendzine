@@ -1,7 +1,9 @@
 :root {
   --edge-space: 20px;
   --spacer: 20px;
-  --gap: 20px;
+  --spacer-m: 60px;
+  --spacer-l: 80px;
+  --gap: 30px;
   --section-padding-y: 60px;
 
   @media (--medium) {

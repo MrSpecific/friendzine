@@ -1,0 +1,14 @@
+@import "../settings/breakpoints";
+
+.coverImage {
+  margin-bottom: var(--spacer-m);
+}
+
+.spotifyWrapper {
+  margin-bottom: var(--gap);
+
+  @media (--medium) {
+    float: left;
+    margin-right: var(--gap);
+  }
+}
