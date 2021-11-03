@@ -5,3 +5,9 @@
 
 .content {
 }
+
+.structured-content {
+  & p {
+    margin-bottom: var(--gap);
+  }
+}

@@ -34,7 +34,7 @@ export default function IssuePage({ title, cover, content, spotifyUrl, ...fields
           </div>
         )}
 
-        <div className={styles.contentWrapper}>
+        <div className="structured-content">
           <StructuredText data={content} />
         </div>
       </main>
