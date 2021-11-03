@@ -36,8 +36,7 @@
   grid-template-areas:
     "spacer"
     "main";
-  min-width: max(40vw, 420px);
-  max-width: 100%;
+  width: clamp(40vw, 420px, 100vw);
   background-color: var(--nearly-black);
   color: var(--white);
   z-index: 1;
