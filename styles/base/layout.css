@@ -1,0 +1,7 @@
+.container {
+  padding-left: var(--edge-space);
+  padding-right: var(--edge-space);
+}
+
+.content {
+}

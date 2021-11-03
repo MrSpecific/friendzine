@@ -3,15 +3,17 @@ import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
 
 import Header from '../../components/Header';
 
-export default function IssuePage(props) {
-  const { data } = props;
+export default function IssuePage({ title, ...fields }) {
   const router = useRouter();
   const id = router.query;
 
   return (
     <>
-      <Header>Issue</Header>
-      <h2>{data.title}</h2>
+      <Header>
+        <h1>{title}</h1>
+      </Header>
+      <h2>{title}</h2>
+      {JSON.stringify(fields)}
     </>
   );
 }
@@ -40,7 +42,7 @@ export async function getStaticPaths() {
 
 const SINGLE_ISSUE_QUERY = gql`
   query Issue($slug: String) {
-    allIssues(filter: { slug: { eq: $slug } }) {
+    issue(filter: { slug: { eq: $slug } }) {
       title
       date
       slug
@@ -76,6 +78,6 @@ export async function getStaticProps({ params }) {
   });
 
   return {
-    props: { data },
+    props: { ...data.issue },
   };
 }

@@ -1,5 +1,7 @@
 @import "modern-css-reset";
 
+@import "./base/layout";
+
 @import "./settings/breakpoints";
 @import "./settings/colors";
 @import "./settings/fonts";
