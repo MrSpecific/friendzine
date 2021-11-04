@@ -37,7 +37,7 @@
     "spacer"
     "main";
   width: clamp(30vw, 420px, 100vw);
-  padding: var(--spacer);
+  padding: var(--edge-space);
   background-color: var(--nearly-black);
   color: var(--white);
   text-align: right;
