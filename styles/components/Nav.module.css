@@ -36,11 +36,13 @@
   grid-template-areas:
     "spacer"
     "main";
-  width: clamp(40vw, 420px, 100vw);
+  width: clamp(30vw, 420px, 100vw);
+  padding: var(--spacer);
   background-color: var(--nearly-black);
   color: var(--white);
+  text-align: right;
   z-index: 1;
-  transition: transform 350ms ease;
+  transition: transform 300ms ease;
 
   &:not(.active) {
     pointer-events: none;

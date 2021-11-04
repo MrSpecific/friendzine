@@ -7,6 +7,8 @@
 }
 
 .structured-content {
+  font-size: var(--content-font-size);
+
   & p {
     margin-bottom: var(--gap);
   }
