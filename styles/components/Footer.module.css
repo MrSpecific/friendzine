@@ -7,9 +7,9 @@
   padding: var(--edge-space);
 
   & svg {
-    height: 36px;
+    height: 30px;
     fill: currentColor;
   }
 
-  --link-color: var(--honeydew);
+  --link-color: var(--violet);
 }
