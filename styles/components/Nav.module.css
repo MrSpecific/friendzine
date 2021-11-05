@@ -38,6 +38,7 @@
     "main";
   width: clamp(30vw, 420px, 100vw);
   padding: var(--edge-space);
+  padding-left: var(--gap);
   background-color: var(--nearly-black);
   color: var(--white);
   text-align: right;
@@ -60,6 +61,10 @@
 
 .primaryNav {
   list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-s);
 }
 
 .navItem {
@@ -67,4 +72,5 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 1;
 }

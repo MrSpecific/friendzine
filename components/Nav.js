@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
 import classNames from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
+import { AppContext } from '@data/context';
 
 import styles from '@styles/components/Nav.module.css';
 
 const Nav = () => {
+  // console.log(latest);
+  const { currentIssue } = useContext(AppContext);
   const [isOpen, setOpen] = useState(false);
 
   const sectionClass = classNames({
@@ -38,6 +42,13 @@ const Nav = () => {
                 <a>Home</a>
               </Link>
             </li>
+            {currentIssue && (
+              <li className={styles.navItem}>
+                <Link href={`/issue/${currentIssue.slug}`}>
+                  <a>Current Issue</a>
+                </Link>
+              </li>
+            )}
           </ol>
         </div>
       </nav>

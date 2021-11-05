@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { Image } from 'react-datocms';
 import classNames from 'classnames';
-import { gql } from 'graphql-request';
-import { responsiveImageFragment, request } from '@data/datocms';
+import { gql, responsiveImageFragment, request } from '@data/datocms';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
