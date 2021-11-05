@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import ReactMarkdown from 'react-markdown';
 import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
 import { Image, StructuredText } from 'react-datocms';
 
@@ -8,7 +9,7 @@ import Footer from '@components/Footer';
 import SpotifyPlayer from '@components/SpotifyPlayer';
 import styles from '@styles/pages/Issue.module.css';
 
-export default function IssuePage({ title, cover, content, spotifyUrl, ...fields }) {
+export default function IssuePage({ title, date, cover, content, spotifyUrl, summary, ...fields }) {
   const router = useRouter();
   const id = router.query;
 
@@ -23,6 +24,11 @@ export default function IssuePage({ title, cover, content, spotifyUrl, ...fields
       </Header>
 
       <main className="container">
+        {date && (
+          <time dateTime={date} pubdate="pubdate" className={styles.date}>
+            Published on {date}
+          </time>
+        )}
         {cover && (
           // eslint-disable-next-line jsx-a11y/alt-text
           <Image data={cover.responsiveImage} className={styles.coverImage} />
@@ -33,6 +39,8 @@ export default function IssuePage({ title, cover, content, spotifyUrl, ...fields
             <SpotifyPlayer url={spotifyUrl} />
           </div>
         )}
+
+        {summary && <ReactMarkdown className={styles.summary}>{summary}</ReactMarkdown>}
 
         <div className="structured-content">
           <StructuredText data={content} />
@@ -81,6 +89,7 @@ const SINGLE_ISSUE_QUERY = gql`
         value
       }
       spotifyUrl
+      summary
       # author {
       #   name
       # }

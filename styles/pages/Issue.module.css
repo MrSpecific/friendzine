@@ -12,3 +12,12 @@
     margin-right: var(--gap);
   }
 }
+
+.summary {
+  font-size: 20px;
+}
+
+.date {
+  color: var(--violet);
+  font-style: italic;
+}
