@@ -1,17 +1,17 @@
 import styles from '@styles/components/Footer.module.css';
-import GithubLogo from './svg/github.svg';
-import FlickrLogo from './svg/flickr.svg';
+import InstagramLogo from './svg/instagram.svg';
+import TwitterLogo from './svg/twitter.svg';
 
 const Footer = (props) => {
   return (
     <footer className={styles.footer}>
-      <a href="//github.com/MrSpecific" target="_blank" rel="noopener noreferrer">
-        <GithubLogo />
-        <span className="visually-hidden">Github</span>
+      <a href="//instagram.com/frndzine" target="_blank" rel="noopener noreferrer">
+        <InstagramLogo />
+        <span className="visually-hidden">Instagram</span>
       </a>
-      <a href="//www.flickr.com/photos/bombcity/albums" target="_blank" rel="noopener noreferrer">
-        <FlickrLogo />
-        <span className="visually-hidden">Flickr</span>
+      <a href="//twitter.com/frndzine" target="_blank" rel="noopener noreferrer">
+        <TwitterLogo />
+        <span className="visually-hidden">Twitter</span>
       </a>
     </footer>
   );
