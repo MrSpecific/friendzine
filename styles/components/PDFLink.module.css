@@ -1,0 +1,7 @@
+.pdfLink {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-gap: var(--gap);
+  font-size: 22px;
+  align-items: center;
+}

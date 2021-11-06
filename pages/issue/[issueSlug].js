@@ -7,9 +7,19 @@ import { Image, StructuredText } from 'react-datocms';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import SpotifyPlayer from '@components/SpotifyPlayer';
+import PDFLink from '@components/PDFLink';
 import styles from '@styles/pages/Issue.module.css';
 
-export default function IssuePage({ title, date, cover, content, spotifyUrl, summary, ...fields }) {
+export default function IssuePage({
+  title,
+  date,
+  cover,
+  content,
+  spotifyUrl,
+  summary,
+  pdf,
+  ...fields
+}) {
   const router = useRouter();
   const id = router.query;
 
@@ -29,22 +39,27 @@ export default function IssuePage({ title, date, cover, content, spotifyUrl, sum
             Published on {date}
           </time>
         )}
+
         {cover && (
           // eslint-disable-next-line jsx-a11y/alt-text
           <Image data={cover.responsiveImage} className={styles.coverImage} />
         )}
 
-        {spotifyUrl && (
-          <div className={styles.spotifyWrapper}>
-            <SpotifyPlayer url={spotifyUrl} />
+        <section className={styles.mainContent}>
+          {spotifyUrl && (
+            <div className={styles.spotifyWrapper}>
+              <SpotifyPlayer url={spotifyUrl} />
+            </div>
+          )}
+
+          <PDFLink pdf={pdf} />
+
+          {summary && <ReactMarkdown className={styles.summary}>{summary}</ReactMarkdown>}
+
+          <div className="structured-content">
+            <StructuredText data={content} />
           </div>
-        )}
-
-        {summary && <ReactMarkdown className={styles.summary}>{summary}</ReactMarkdown>}
-
-        <div className="structured-content">
-          <StructuredText data={content} />
-        </div>
+        </section>
       </main>
 
       <Footer />
@@ -90,6 +105,9 @@ const SINGLE_ISSUE_QUERY = gql`
       }
       spotifyUrl
       summary
+      pdf {
+        url
+      }
       # author {
       #   name
       # }
