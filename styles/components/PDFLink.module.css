@@ -1,12 +1,24 @@
 @import "../settings/breakpoints";
 
 .pdfLink {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 1fr;
-  grid-gap: var(--spacer-s);
+  grid-gap: 0 var(--spacer-s);
+  padding: var(--spacer-s);
+  border-radius: var(--spacer-s);
   font-size: 22px;
   align-items: center;
   justify-items: center;
+  box-shadow: var(--shadow);
+  transition: box-shadow 350ms ease, transform 350ms ease;
+
+  &:hover {
+    --shadow: var(--shadow-dark);
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
 
   @media (--medium) {
     grid-template-columns: auto 1fr;
