@@ -1,0 +1,7 @@
+@import "../settings/breakpoints";
+
+.spotifyPlayer {
+  @media (--small-only) {
+    width: 100%;
+  }
+}

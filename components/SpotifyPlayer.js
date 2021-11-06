@@ -1,3 +1,5 @@
+import styles from '@styles/components/SpotifyPlayer.module.css';
+
 const SpotifyPlayer = ({
   url,
   style = {},
@@ -13,6 +15,7 @@ const SpotifyPlayer = ({
   return (
     <iframe
       title="Spotify Web Player"
+      className={styles.spotifyPlayer}
       src={`https://open.spotify.com/embed${urlObj.pathname}`}
       width={width}
       height={height}

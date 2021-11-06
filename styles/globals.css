@@ -1,5 +1,6 @@
 @import "modern-css-reset";
 
+@import "./base/helpers";
 @import "./base/layout";
 
 @import "./settings/breakpoints";
@@ -82,14 +83,6 @@ h6,
   font-size: var(--font-size-h6);
 }
 
-.visually-hidden {
-  /* stylelint-disable-next-line */
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
+.svg-icon {
+  fill: currentColor;
 }
