@@ -8,6 +8,7 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import SpotifyPlayer from '@components/SpotifyPlayer';
 import PDFLink from '@components/PDFLink';
+import Attribution from '@components/Attribution';
 import styles from '@styles/pages/Issue.module.css';
 
 export default function IssuePage({
@@ -34,11 +35,7 @@ export default function IssuePage({
       </Header>
 
       <main className="container">
-        {date && (
-          <time dateTime={date} pubdate="pubdate" className={styles.date}>
-            Published on {date}
-          </time>
-        )}
+        <Attribution date={date} />
 
         {cover && (
           // eslint-disable-next-line jsx-a11y/alt-text
