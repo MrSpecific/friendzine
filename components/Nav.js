@@ -31,12 +31,16 @@ const Nav = () => {
     setOpen(false);
   };
 
+  const navLinkClicked = (event) => {
+    console.log('navLinkClicked', event);
+  };
+
   return (
     <section className={sectionClass}>
       <div className={overlayClass} onClick={closeNav} />
       <nav className={navClass}>
         <div className={styles.navMain}>
-          <ol className={styles.primaryNav}>
+          <ol className={styles.primaryNav} onClick={navLinkClicked}>
             <li className={styles.navItem}>
               <Link href={`/`}>
                 <a>Home</a>
