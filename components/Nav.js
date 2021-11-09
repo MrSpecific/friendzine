@@ -53,6 +53,14 @@ const Nav = () => {
                 </Link>
               </li>
             )}
+            <li className={styles.navItem}>
+              <hr />
+            </li>
+            <li className={styles.navItem}>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
           </ol>
         </div>
       </nav>
