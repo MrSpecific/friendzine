@@ -8,7 +8,7 @@ import Footer from '@components/Footer';
 import SpotifyPlayer from '@components/SpotifyPlayer';
 import styles from '@styles/pages/Issue.module.css';
 
-export default function ArticlePage({ title, cover, content, spotifyUrl, ...fields }) {
+export default function ArticlePage({ title, featuredImage, content, spotifyUrl, ...fields }) {
   const router = useRouter();
   const id = router.query;
 
@@ -23,10 +23,14 @@ export default function ArticlePage({ title, cover, content, spotifyUrl, ...fiel
       </Header>
 
       <main className="container">
-        {cover && (
+        {featuredImage && (
           // eslint-disable-next-line jsx-a11y/alt-text
-          <Image data={cover.responsiveImage} className={styles.coverImage} />
+          <Image data={featuredImage.responsiveImage} className={styles.coverImage} />
         )}
+
+        <div className="structured-content">
+          <StructuredText data={content} />
+        </div>
       </main>
 
       <Footer />
@@ -62,14 +66,14 @@ const SINGLE_ARTICLE_QUERY = gql`
       title
       date
       slug
-      # cover {
-      #   responsiveImage(imgixParams: { fit: crop, w: 1400, h: 700 }) {
-      #     ...responsiveImageFragment
-      #   }
-      # }
-      # content {
-      #   value
-      # }
+      featuredImage {
+        responsiveImage(imgixParams: { fit: crop, w: 1400, h: 700 }) {
+          ...responsiveImageFragment
+        }
+      }
+      content {
+        value
+      }
       # spotifyUrl
     }
   }
