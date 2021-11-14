@@ -7,6 +7,7 @@ import classNames from 'classnames';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import { ArticleList } from '@components/ArticleCard';
 import SpotifyPlayer from '@components/SpotifyPlayer';
 import PDFLink from '@components/PDFLink';
 import Attribution from '@components/Attribution';
@@ -20,6 +21,7 @@ export default function IssuePage({
   spotifyUrl,
   summary,
   pdf,
+  articles,
   ...fields
 }) {
   const router = useRouter();
@@ -62,8 +64,14 @@ export default function IssuePage({
             <StructuredText data={content} />
           </div>
         </section>
-      </main>
 
+        {articles && (
+          <section className={styles.articlesSection}>
+            <h2>Articles in this issue: </h2>
+            <ArticleList articles={articles} />
+          </section>
+        )}
+      </main>
       <Footer />
     </article>
   );
@@ -109,6 +117,10 @@ const SINGLE_ISSUE_QUERY = gql`
       summary
       pdf {
         url
+      }
+      articles {
+        slug
+        title
       }
       # author {
       #   name
