@@ -7,9 +7,7 @@ export const PublishedDate = ({ date, className, hideLabel = false }) => {
 
   return (
     <time dateTime={date} pubdate="pubdate" className={className}>
-      <span className={hideLabel ? 'visually-hidden' : null}>
-        Published {JSON.stringify(hideLabel, null, 2)} on{' '}
-      </span>
+      <span className={hideLabel ? 'visually-hidden' : null}>Published </span>
       {dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
     </time>
   );

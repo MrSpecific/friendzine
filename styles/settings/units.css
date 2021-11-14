@@ -10,4 +10,6 @@
   @media (--medium) {
     --edge-space: 60px;
   }
+
+  --border: 2px solid var(--honeydew);
 }

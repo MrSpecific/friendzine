@@ -5,10 +5,18 @@ import { Image, StructuredText } from 'react-datocms';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import Attribution from '@components/Attribution';
 import SpotifyPlayer from '@components/SpotifyPlayer';
 import styles from '@styles/pages/Issue.module.css';
 
-export default function ArticlePage({ title, featuredImage, content, spotifyUrl, ...fields }) {
+export default function ArticlePage({
+  title,
+  date,
+  featuredImage,
+  content,
+  spotifyUrl,
+  ...fields
+}) {
   const router = useRouter();
   const id = router.query;
 
@@ -23,6 +31,8 @@ export default function ArticlePage({ title, featuredImage, content, spotifyUrl,
       </Header>
 
       <main className="container">
+        <Attribution date={date} />
+
         {featuredImage && (
           // eslint-disable-next-line jsx-a11y/alt-text
           <Image data={featuredImage.responsiveImage} className={styles.coverImage} />

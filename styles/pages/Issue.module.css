@@ -29,3 +29,9 @@
 .summary {
   font-size: 20px;
 }
+
+.articlesSection {
+  margin-top: var(--gap);
+  border-top: var(--border);
+  padding-top: var(--gap);
+}

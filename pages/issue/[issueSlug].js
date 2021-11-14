@@ -66,10 +66,12 @@ export default function IssuePage({
         </section>
 
         {articles && (
-          <section className={styles.articlesSection}>
-            <h2>Articles in this issue: </h2>
-            <ArticleList articles={articles} />
-          </section>
+          <div className="container--narrow">
+            <section className={styles.articlesSection}>
+              <h2>Articles in this issue: </h2>
+              <ArticleList articles={articles} />
+            </section>
+          </div>
         )}
       </main>
       <Footer />
