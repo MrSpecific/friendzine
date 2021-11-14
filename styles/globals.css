@@ -54,6 +54,7 @@ h1,
   font-weight: 700;
   letter-spacing: -4px;
   margin-left: -0.06em;
+  word-break: break-word;
 }
 
 h2,
