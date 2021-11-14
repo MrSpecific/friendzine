@@ -49,7 +49,7 @@ export default function IssuePage({
           <PDFLink pdf={pdf} />
         </div>
 
-        <section className={styles.issueTop}>
+        <section className={classNames([styles.issueTop], 'container--narrow')}>
           {summary && <ReactMarkdown className={styles.summary}>{summary}</ReactMarkdown>}
 
           {spotifyUrl && (

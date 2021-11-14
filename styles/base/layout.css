@@ -4,6 +4,7 @@
 }
 
 .container--narrow {
+  @extends .container;
   margin-left: auto;
   margin-right: auto;
 

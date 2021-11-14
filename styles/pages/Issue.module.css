@@ -5,7 +5,8 @@
 }
 
 .issueTop {
-  margin: var(--gap);
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
 
   @media (--medium) {
     display: grid;
