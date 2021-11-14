@@ -4,12 +4,25 @@
   margin-bottom: var(--spacer-m);
 }
 
+.issueTop {
+  margin: var(--gap);
+
+  @media (--medium) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.issuePDF {
+  text-align: center;
+}
+
 .spotifyWrapper {
   margin-bottom: var(--gap);
 
   @media (--medium) {
-    float: left;
-    margin-right: var(--gap);
+    text-align: right;
+    /* margin-right: var(--gap); */
   }
 }
 

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import { gql, request, getPaths, responsiveImageFragment } from '@data/datocms';
 import { Image, StructuredText } from 'react-datocms';
+import classNames from 'classnames';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
@@ -42,17 +43,21 @@ export default function IssuePage({
           <Image data={cover.responsiveImage} className={styles.coverImage} />
         )}
 
-        <section className={styles.mainContent}>
+        <div className={styles.issuePDF}>
+          <PDFLink pdf={pdf} />
+        </div>
+
+        <section className={styles.issueTop}>
+          {summary && <ReactMarkdown className={styles.summary}>{summary}</ReactMarkdown>}
+
           {spotifyUrl && (
             <div className={styles.spotifyWrapper}>
               <SpotifyPlayer url={spotifyUrl} />
             </div>
           )}
+        </section>
 
-          <PDFLink pdf={pdf} />
-
-          {summary && <ReactMarkdown className={styles.summary}>{summary}</ReactMarkdown>}
-
+        <section className={classNames([[styles.mainContent], 'container--narrow'])}>
           <div className="structured-content">
             <StructuredText data={content} />
           </div>

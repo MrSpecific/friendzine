@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { Image } from 'react-datocms';
-import classNames from 'classnames';
 
-import Nav from '@components/Nav';
 import { PublishedDate } from '@components/Attribution';
 import styles from '@styles/components/IssueCard.module.css';
 
