@@ -19,6 +19,11 @@ body {
   color: var(--body-color);
 }
 
+*::selection {
+  background-color: var(--selection-background-color);
+  color: var(--selection-color);
+}
+
 a {
   /* color: inherit; */
   color: var(--link-color);

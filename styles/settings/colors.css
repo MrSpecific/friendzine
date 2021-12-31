@@ -14,6 +14,9 @@
   --body-bg: var(--pure-white);
   --body-color: var(--dark-grey);
 
+  --selection-background-color: var(--violet);
+  --selection-color: var(--white);
+
   --link-color: var(--pink);
   --link-color-hover: var(--magenta);
   --link-color-active: var(--light-pink);

@@ -10,7 +10,11 @@
 
 .issuesList {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: var(--gap);
   padding: 0;
+
+  @media (--medium) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
