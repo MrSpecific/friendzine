@@ -22,7 +22,7 @@ export default function Home({ issues }) {
       </Head>
 
       <Header>
-        <h1>Friendzine</h1>
+        <h1>Friendzine.</h1>
       </Header>
 
       <main className="container">

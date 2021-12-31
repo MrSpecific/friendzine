@@ -13,6 +13,9 @@ html,
 body {
   font-family: var(--font-family-primary);
   background-color: var(--body-bg);
+  background-image: url("../public/images/paper.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--body-color);
 }
 
