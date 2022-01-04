@@ -6,8 +6,20 @@ import { Image, StructuredText } from 'react-datocms';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import Attribution from '@components/Attribution';
-import SpotifyPlayer from '@components/SpotifyPlayer';
+// import SpotifyPlayer from '@components/SpotifyPlayer';
+import Telenarration from '@components/Telenarration';
 import styles from '@styles/pages/Issue.module.css';
+
+const inlineRecordHandler = ({ record }) => {
+  console.log(record);
+  // return <h2>{record.__typename}</h2>;
+  switch (record.__typename) {
+    case 'TelenarrationRecord':
+      return <Telenarration {...record} />;
+    default:
+      return null;
+  }
+};
 
 export default function ArticlePage({
   title,
@@ -39,7 +51,7 @@ export default function ArticlePage({
         )}
 
         <div className="structured-content">
-          <StructuredText data={content} />
+          <StructuredText data={content} renderInlineRecord={inlineRecordHandler} />
         </div>
       </main>
 
@@ -83,6 +95,28 @@ const SINGLE_ARTICLE_QUERY = gql`
       }
       content {
         value
+        links {
+          __typename
+          ... on TelenarrationRecord {
+            id
+            title
+            intro
+            entries {
+              __typename
+              ... on QuestionRecord {
+                id
+                question
+              }
+              ... on AnswerRecord {
+                id
+                name
+                answer {
+                  value
+                }
+              }
+            }
+          }
+        }
       }
       # spotifyUrl
     }
