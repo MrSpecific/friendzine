@@ -12,5 +12,18 @@
 
 .question,
 .answer {
+  padding: var(--spacer-s);
+  border-radius: 10px;
+}
+
+.question {
   background-color: var(--honeydew);
+}
+
+.answer {
+  background-color: var(--light-grey);
+}
+
+.answer p {
+  margin-bottom: 0;
 }
