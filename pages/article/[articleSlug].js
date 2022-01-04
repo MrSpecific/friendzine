@@ -11,8 +11,6 @@ import Telenarration from '@components/Telenarration';
 import styles from '@styles/pages/Issue.module.css';
 
 const inlineRecordHandler = ({ record }) => {
-  console.log(record);
-  // return <h2>{record.__typename}</h2>;
   switch (record.__typename) {
     case 'TelenarrationRecord':
       return <Telenarration {...record} />;

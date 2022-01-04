@@ -1,0 +1,16 @@
+.telenarrationWrapper {
+}
+
+.telenarration {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--spacer);
+}
+
+.question,
+.answer {
+  background-color: var(--honeydew);
+}
