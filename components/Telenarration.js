@@ -4,13 +4,18 @@ import classNames from 'classnames';
 import styles from '@styles/components/Telenarration.module.css';
 
 export const Question = ({ question }) => {
-  return <li className={styles.question}>Question: {question}</li>;
+  return (
+    <li className={styles.question}>
+      <span className={styles.label}>Question: </span>
+      {question}
+    </li>
+  );
 };
 
 export const Answer = ({ name, answer }) => {
   return (
     <li className={styles.answer}>
-      {name}:
+      <span className={styles.label}>{name}:</span>
       <StructuredText data={answer} />
     </li>
   );
