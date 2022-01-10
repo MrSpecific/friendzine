@@ -1,10 +1,12 @@
 .issueCard {
+  --shadow: var(--shadow-elevation-medium);
   --offset: 0;
   position: relative;
   margin-bottom: var(--gap);
 
   &:hover {
-    --shadow: var(--shadow-dark);
+    /* --shadow: var(--shadow-dark); */
+    --shadow: var(--shadow-elevation-high);
   }
 
   &:active {
