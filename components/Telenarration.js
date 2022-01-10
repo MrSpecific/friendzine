@@ -1,4 +1,5 @@
 import { StructuredText } from 'react-datocms';
+import classNames from 'classnames';
 import styles from '@styles/components/Telenarration.module.css';
 
 export const Question = ({ question }) => {
@@ -18,7 +19,7 @@ const Telenarration = ({ title, intro, entries }) => {
   if (!entries) return null;
 
   return (
-    <section className={styles.telenarrationWrapper}>
+    <section className={classNames(['container--narrow', [styles.telenarrationWrapper]])}>
       <h2>{title}</h2>
       {intro && <div className={styles.intro}>{intro}</div>}
       <ol className={styles.telenarration}>
