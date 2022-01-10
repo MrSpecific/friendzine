@@ -20,14 +20,14 @@ const Telenarration = ({ title, intro, entries }) => {
   return (
     <section className={styles.telenarrationWrapper}>
       <h2>{title}</h2>
-      {intro && <div className="intro">{intro}</div>}
+      {intro && <div className={styles.intro}>{intro}</div>}
       <ol className={styles.telenarration}>
         {entries.map((entry) => {
           switch (entry.__typename) {
             case 'QuestionRecord':
-              return <Question {...entry} />;
+              return <Question key={entry.id} {...entry} />;
             case 'AnswerRecord':
-              return <Answer {...entry} />;
+              return <Answer key={entry.id} {...entry} />;
             default:
               return null;
           }

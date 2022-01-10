@@ -10,6 +10,10 @@
   grid-gap: var(--spacer);
 }
 
+.intro {
+  margin-bottom: var(--spacer-m);
+}
+
 .question,
 .answer {
   padding: var(--spacer-s);
