@@ -20,8 +20,11 @@
 .answer {
   padding: var(--spacer-s);
   border-radius: 10px;
+  min-width: 40%;
+  max-width: 80%;
 
   @media (--medium) {
+    min-width: 30%;
     max-width: 60%;
   }
 }
@@ -32,8 +35,8 @@
 
 .answer {
   background-color: var(--light-grey);
+  margin-left: auto;
   @media (--medium) {
-    margin-left: auto;
   }
 }
 
