@@ -21,7 +21,7 @@
   padding: var(--spacer-s);
   border-radius: 10px;
   min-width: 40%;
-  max-width: 80%;
+  max-width: 90%;
   box-shadow: var(--shadow-elevation-medium);
 
   @media (--medium) {

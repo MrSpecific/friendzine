@@ -1,4 +1,5 @@
 import { StructuredText } from 'react-datocms';
+import ReactMarkdown from 'react-markdown';
 import classNames from 'classnames';
 import styles from '@styles/components/Telenarration.module.css';
 
@@ -23,7 +24,7 @@ const Telenarration = ({ title, intro, entries }) => {
   return (
     <section className={classNames(['container--narrow', [styles.telenarrationWrapper]])}>
       <h2>{title}</h2>
-      {intro && <div className={styles.intro}>{intro}</div>}
+      {intro && <ReactMarkdown className={styles.intro}>{intro}</ReactMarkdown>}
       <ol className={styles.telenarration}>
         {entries.map((entry) => {
           switch (entry.__typename) {
