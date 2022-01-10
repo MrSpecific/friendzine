@@ -18,6 +18,8 @@ export const Answer = ({ name, answer }) => {
 const Telenarration = ({ title, intro, entries }) => {
   if (!entries) return null;
 
+  const participants = [];
+
   return (
     <section className={classNames(['container--narrow', [styles.telenarrationWrapper]])}>
       <h2>{title}</h2>
