@@ -108,7 +108,7 @@ const SINGLE_ISSUE_QUERY = gql`
       date
       slug
       cover {
-        responsiveImage(imgixParams: { fit: crop, w: 1400, h: 700 }) {
+        responsiveImage(imgixParams: { fit: crop, w: 1400, h: 900 }) {
           ...responsiveImageFragment
         }
       }
