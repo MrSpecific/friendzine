@@ -22,7 +22,7 @@ export default function About() {
 
       <main className="container">
         Feeding Friendzine was created by Trevor Peterson. <br />
-        Website developed by Will Christenson
+        Website developed by <a href="https://willchristenson.com">Will Christenson</a>
       </main>
 
       <Footer />
