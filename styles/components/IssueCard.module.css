@@ -3,10 +3,21 @@
   --offset: 0;
   position: relative;
   margin-bottom: var(--gap);
+  transition: transform 300ms ease;
+  transform-origin: bottom right;
+
+  &:nth-child(even) {
+    transform-origin: bottom left;
+
+    &:hover {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
 
   &:hover {
     /* --shadow: var(--shadow-dark); */
     --shadow: var(--shadow-elevation-high);
+    transform: translateY(-10px) rotate(-1deg);
   }
 
   &:active {
