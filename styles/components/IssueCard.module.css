@@ -30,6 +30,7 @@
   box-shadow: var(--shadow);
   transition: box-shadow 350ms ease, transform 350ms ease;
   transform: translate(var(--offset), var(--offset));
+  max-width: 100% !important;
 }
 
 .articleLink {

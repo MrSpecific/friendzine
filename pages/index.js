@@ -55,7 +55,7 @@ const HOMEPAGE_QUERY = gql`
       slug
       date
       cover {
-        responsiveImage(imgixParams: { fit: crop, w: 1200, h: 600 }) {
+        responsiveImage(imgixParams: { fit: crop, w: 1200, h: 800 }) {
           ...responsiveImageFragment
         }
       }
