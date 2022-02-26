@@ -1,15 +1,33 @@
+@import "../settings/breakpoints";
+
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  padding: var(--edge-space);
+
+  --link-color: var(--violet);
+
+  @media (--small-only) {
+    flex-direction: column;
+  }
+}
+
+.attribution {
+  font-size: 14px;
+  color: var(--dark-grey);
+}
+
+.footerSocials {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
-  width: 100%;
-  padding: var(--edge-space);
+  gap: var(--spacer-s);
 
   & svg {
     height: 30px;
     fill: currentColor;
   }
-
-  --link-color: var(--violet);
 }
