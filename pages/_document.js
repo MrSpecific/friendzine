@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import siteInfo from '@data/siteInfo';
+import GoogleAnalytics from '@data/analytics';
 
 const Body = ({ children }) => {
   return <body>{children}</body>;
@@ -31,6 +32,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap"
             rel="stylesheet"
           />
+          <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         </Head>
         <Body>
           <Main />

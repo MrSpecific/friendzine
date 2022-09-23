@@ -17,6 +17,8 @@
 }
 
 .structured-content {
+  margin: 0 auto;
+  max-width: var(--container-width-medium);
   font-size: var(--content-font-size);
 
   & p {

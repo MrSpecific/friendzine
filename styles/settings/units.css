@@ -7,6 +7,9 @@
   --gap: 30px;
   --section-padding-y: 60px;
 
+  --container-width: 1440px;
+  --container-width-medium: 960px;
+
   @media (--medium) {
     --edge-space: 60px;
     --spacer: 40px;
